@@ -1,11 +1,7 @@
-# weather_streaming_platform/configs/mysql_config.py
+import os
 
-MYSQL_HOST = "localhost"
-
-MYSQL_PORT = 3306
-
-MYSQL_DATABASE = "weather_db"
-
-MYSQL_USERNAME = "root"
-
-MYSQL_PASSWORD = "2006"
+MYSQL_HOST = os.getenv("MYSQLHOST", "localhost")
+MYSQL_PORT = int(os.getenv("MYSQLPORT", 3306))
+MYSQL_DATABASE = os.getenv("MYSQLDATABASE", "weather_db")
+MYSQL_USERNAME = os.getenv("MYSQLUSER", "root")
+MYSQL_PASSWORD = os.getenv("MYSQLPASSWORD", "2006")
